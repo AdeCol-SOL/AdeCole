@@ -5,24 +5,23 @@ menuToggle.addEventListener("click", function () {
     navLinks.classList.toggle("active");
 });
 
+window.dataLayer = window.dataLayer || [];
+
 /* =========================
    ASSESSMENT TRACKING
    ========================= */
+function trackEvent (eventName, eventParameters = {}) {
 
-   function trackEvent(eventName, eventParameters = {}) {
+    window.dataLayer = window.dataLayer || [];
 
-    if (typeof window.gtag === "function") {
+    window.dataLayer.push({
+        event: eventName,
+        ...eventParameters
+    });
 
-        window.gtag(
-            "event",
-            eventName,
-            eventParameters
-        );
+} 
 
-    }
-
-}
-
+console.log("NEW TRACK EVENT VERSION LOADED");
 
 /* =========================
    DIGITAL MATURITY ASSESSMENT

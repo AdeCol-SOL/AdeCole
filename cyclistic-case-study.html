@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W7QFLXDS');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cyclistic Bike-Share Case Study | AdeCole Digital
+    </title>
+
+    <meta
+        name="description"
+        content="Cyclistic bike-share data analytics case study analyzing more than 6.1 million trips using Python, Pandas, Excel and Tableau."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W7QFLXDS"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                AdeCole
+            </a>
+
+            <div class="nav-links">
+
+                <a href="index.html#services">
+                    Services
+                </a>
+
+                <a href="index.html#projects">
+                    Case Studies
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+            </div>
+
+            <a href="index.html#contact" class="nav-cta">
+                Book a Consultation
+            </a>
+
+        </nav>
+
+    </header>
+    <!-- Case Study Navigation -->
+    <nav class="case-study-nav" aria-label="Cyclistic case study navigation">
+
+        <div class="case-study-nav-inner">
+
+            <span class="case-study-nav-title">
+                Cyclistic Case Study
+            </span>
+
+            <div class="case-study-nav-links">
+
+                <a href="#overview">Overview</a>
+
+                <a href="#ask">Ask</a>
+
+                <a href="#prepare">Prepare</a>
+
+                <a href="#process">Process</a>
+
+                <a href="#analyze">Analyze</a>
+
+                <a href="#share">Share</a>
+
+                <a href="#act">Act</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+
+    <main>
+
+        <section class="case-study-hero">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    DATA ANALYTICS CASE STUDY
+                </p>
+
+                <h1>
+                    Cyclistic Bike-Share Rider Behavior Analysis
+                </h1>
+
+                <p class="case-study-lead">
+                    An analysis of more than 6.1 million bike-share
+                    trips to understand how casual riders and annual
+                    members behave differently and identify inform membership-conversion opportunities.
+                </p>
+
+                <p class="case-study-tools">
+                    Python · Pandas · Excel · Tableau
+                </p>
+                <div class="project-summary">
+
+    <div class="project-summary-item">
+        <span>BUSINESS GOAL</span>
+        <strong>
+            Convert casual riders into annual members
+        </strong>
+    </div>
+
+    <div class="project-summary-item">
+        <span>DATASET</span>
+        <strong>
+            6.1M+ trips · 12 months
+        </strong>
+    </div>
+
+    <div class="project-summary-item">
+        <span>ROLE</span>
+        <strong>
+            End-to-end data analysis
+        </strong>
+    </div>
+
+    <div class="project-summary-item">
+        <span>OUTPUT</span>
+        <strong>
+            Insights · Recommendations · Measurement framework
+        </strong>
+    </div>
+
+</div>
+
+            </div>
+
+        </section>
+        
+        <!-- Project Overview -->
+         
+        
+        <section id="overview" class="case-study-overview">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    PROJECT OVERVIEW
+                </p>
+                
+                <h2>
+                    Turning rider behavior into business insight.
+                </h2>
+                
+                <p>
+                    Cyclistic wants to understand how annual members and
+                    casual riders use its bike-share service differently.
+                    This case study examines rider behavior across trip duration, weekly usage,
+                    seasonality and bike type to identify patterns that can inform strategies
+                    for converting casual riders into annual members.
+                </p>
+            
+            </div>    
+        
+        </div>            
+    
+    </div>
+
+</section>
+
+<!-- Business Question -->
+<section id="ask" class="case-study-section">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            01 — ASK
+        </p>
+
+        <h2>
+            The business question
+        </h2>
+
+        <p>
+            Cyclistic wants to increase the number of casual riders
+            who become annual members. Before developing a marketing
+            strategy, the company needs to understand whether these
+            two rider groups use the bike-share service differently.
+        </p>
+
+        <div class="case-study-question">
+
+            <p>
+                How do annual members and casual riders use
+                Cyclistic bikes differently?
+            </p>
+
+        </div>
+
+        <p>
+            The analysis therefore examines differences in ride
+            volume, trip duration, day-of-week behavior, seasonality
+            and bike type to identify patterns that could inform
+            membership-conversion strategies.
+        </p>
+
+    </div>
+
+</section>
+<!-- Prepare -->
+<section id="prepare" class="case-study-section case-study-section-light">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            02 — PREPARE
+        </p>
+
+        <h2>
+            Building a reliable 12-month dataset
+        </h2>
+
+        <p>
+            The analysis uses 12 months of Cyclistic trip data,
+            covering September 2025 through August 2026. The monthly
+            CSV files contain trip-level information including rider
+            type, bike type, start and end timestamps, station
+            information and geographic coordinates.
+        </p>
+
+        <p>
+            Before combining the files, the dataset was inspected
+            for file consistency, date coverage and potential
+            data-quality issues.
+        </p>
+
+        <div class="data-validation">
+
+    <p class="validation-label">
+        DATA VALIDATION
+    </p>
+
+    <h3>
+        Verifying an inconsistent January filename
+    </h3>
+
+    <p>
+        During file inspection, one monthly file was named
+        <strong>202501-divvy-tripdata.csv</strong>, which suggested
+        January 2025 and appeared inconsistent with the intended
+        September 2025–August 2026 analysis period.
+    </p>
+
+    <p>
+        Rather than excluding the file based on its name, the
+        trip timestamps were inspected directly. The
+        <strong>started_at</strong> and <strong>ended_at</strong>
+        values confirmed that the records represented
+        <strong>January 2026</strong>.
+    </p>
+
+    <p>
+        The file was therefore retained as the January 2026 dataset.
+        This validation preserved the complete 12-month analysis
+        period while avoiding an incorrect assumption based solely
+        on the filename.
+    </p>
+
+</div>
+<div class="dataset-summary">
+
+    <h3>
+        Dataset structure
+    </h3>
+
+    <div class="dataset-grid">
+
+        <div>
+            <strong>Analysis Period</strong>
+            <span>Sep 2025 – Aug 2026</span>
+        </div>
+
+        <div>
+            <strong>Source Files</strong>
+            <span>12 monthly CSV files</span>
+        </div>
+
+        <div>
+            <strong>Data Level</strong>
+            <span>Individual bike-share trips</span>
+        </div>
+
+        <div>
+            <strong>Primary Segments</strong>
+            <span>Casual riders & annual members</span>
+        </div>
+
+    </div>
+
+    <p>
+        Key source fields included ride ID, bike type, trip start
+        and end timestamps, station information, geographic
+        coordinates and rider membership type.
+    </p>
+
+</div>
+
+
+</section>
+<!-- Process -->
+<section id="process" class="case-study-section">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            03 — PROCESS
+        </p>
+
+        <h2>
+            Cleaning and preparing the analytical dataset
+        </h2>
+
+        <p>
+            The 12 monthly files were combined into a single dataset
+            and systematically inspected before analysis. Cleaning
+            focused on producing reliable ride-duration measures,
+            validating records and creating variables required for
+            behavioral comparison.
+        </p>
+
+        <div class="process-flow">
+
+            <div>
+                <strong>6,115,982</strong>
+                <span>Combined records</span>
+            </div>
+
+            <div class="process-arrow">
+                →
+            </div>
+
+            <div>
+                <strong>6,110,391</strong>
+                <span>Analytical records</span>
+            </div>
+
+        </div>
+
+    <div class="cleaning-summary">
+
+    <h3>
+        Data cleaning and transformation
+    </h3>
+
+    <div class="cleaning-grid">
+
+        <div>
+            <span>01</span>
+            <h3>Combined</h3>
+            <p>
+                Consolidated the 12 monthly CSV files into a
+                single analytical dataset.
+            </p>
+        </div>
+
+        <div>
+            <span>02</span>
+            <h3>Validated</h3>
+            <p>
+                Checked timestamps, ride records and data-quality
+                conditions before including observations in the
+                analysis.
+            </p>
+        </div>
+
+        <div>
+            <span>03</span>
+            <h3>Transformed</h3>
+            <p>
+                Calculated ride duration and created day-of-week
+                and month variables for behavioral analysis.
+            </p>
+        </div>
+
+        <div>
+            <span>04</span>
+            <h3>Prepared</h3>
+            <p>
+                Produced a cleaned analytical dataset for comparison
+                by rider type, bike type, weekday and month.
+            </p>
+        </div>
+<div class="cleaning-audit">
+
+    <p class="validation-label">
+        CLEANING AUDIT TRAIL
+    </p>
+
+    <h3>
+        Every excluded record was accounted for
+    </h3>
+
+    <div class="audit-row">
+        <span>Combined source records</span>
+        <strong>6,115,982</strong>
+    </div>
+
+    <div class="audit-row">
+        <span>Duplicate occurrences removed</span>
+        <strong>−35</strong>
+    </div>
+
+    <div class="audit-row">
+        <span>Records outside the 12-month analysis period</span>
+        <strong>−268</strong>
+    </div>
+
+    <div class="audit-row">
+        <span>Negative-duration rides</span>
+        <strong>−29</strong>
+    </div>
+
+    <div class="audit-row">
+        <span>Rides exceeding 24 hours</span>
+        <strong>−5,259</strong>
+    </div>
+
+    <div class="audit-row audit-total">
+        <span>Final analytical dataset</span>
+        <strong>6,110,391</strong>
+    </div>
+
+    <div class="quality-note">
+
+    <h3>
+        Investigating unusually long rides
+    </h3>
+
+    <p>
+        Before excluding rides longer than 24 hours, the records
+        were examined for additional data-quality patterns. All
+        5,259 rides were recorded as classic bikes, and 5,151
+        (97.9%) were missing both the end-station name and
+        end-station ID.
+    </p>
+
+    <p>
+        These patterns supported treating the records cautiously
+        during preparation of the analytical dataset. The analysis
+        does not assume a specific cause for the anomaly.
+    </p>
+</div>
+
+</section>
+<!-- Analyze -->
+<section id="analyze" class="case-study-section case-study-section-light">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            04 — ANALYZE
+        </p>
+
+        <h2>
+            How do casual riders and annual members behave differently?
+        </h2>
+
+        <p>
+            The cleaned dataset was analyzed across ride duration,
+            day of week, month and bike type. Four behavioral patterns
+            emerged that help distinguish casual riders from annual
+            members.
+        </p>
+
+        <!-- Finding 1 -->
+<div class="analysis-finding">
+
+    <p class="finding-number">
+        FINDING 01
+    </p>
+
+    <h3>
+        Casual rides last substantially longer than member rides
+    </h3>
+
+    <p>
+        Both the median and mean ride duration show that casual
+        trips generally last longer than member trips.
+    </p>
+
+    <div class="duration-comparison">
+
+        <div class="duration-group">
+
+            <span class="duration-label">
+                CASUAL
+            </span>
+
+            <strong class="duration-value">
+                10.84 min
+            </strong>
+
+            <span class="duration-metric">
+                Median ride duration
+            </span>
+
+        </div>
+
+        <div class="duration-vs">
+            VS
+        </div>
+
+        <div class="duration-group">
+
+            <span class="duration-label">
+                MEMBER
+            </span>
+
+            <strong class="duration-value">
+                8.55 min
+            </strong>
+
+            <span class="duration-metric">
+                Median ride duration
+            </span>
+
+        </div>
+
+    </div>
+
+    <p class="supporting-stat">
+        Mean duration:
+        <strong>17.78 min</strong> for casual rides
+        versus
+        <strong>11.97 min</strong> for member rides.
+    </p>
+
+    <div class="finding-insight">
+
+        <p>
+            Both median and mean duration point in the same direction:
+            casual trips generally last longer than member trips.
+            The higher means relative to the medians indicate that
+            longer-duration rides pull the averages upward in both
+            rider groups.
+        </p>
+
+    </div>
+
+</div>
+
+        
+<!-- Finding 2 -->
+<div class="analysis-finding">
+
+    <p class="finding-number">
+        FINDING 02
+    </p>
+
+    <h3>
+        Casual riding builds toward the weekend; member activity is stronger midweek
+    </h3>
+
+    <p>
+        Daily ride volume reveals distinctly different weekly
+        patterns between casual riders and annual members.
+    </p>
+
+    <div class="weekly-highlights">
+
+        <div>
+            <span>CASUAL PEAK</span>
+            <strong>455,707</strong>
+            <small>Saturday rides</small>
+        </div>
+
+        <div>
+            <span>MEMBER PEAK</span>
+            <strong>631,786</strong>
+            <small>Wednesday rides</small>
+        </div>
+
+    </div>
+
+    <div class="weekly-chart">
+
+        <div class="weekly-chart-legend">
+            <span><i class="legend-casual"></i> Casual</span>
+            <span><i class="legend-member"></i> Member</span>
+        </div>
+
+        <!-- Sunday -->
+        <div class="weekly-chart-row">
+            <span class="day-label">Sun</span>
+
+            <div class="bar-track">
+                <div class="weekly-bar casual-bar" style="width: 55%;">
+                    <span>347k</span>
+                </div>
+            </div>
+
+            <div class="bar-track">
+                <div class="weekly-bar member-bar" style="width: 66%;">
+                    <span>420k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monday -->
+        <div class="weekly-chart-row">
+            <span class="day-label">Mon</span>
+
+            <div class="bar-track">
+                <div class="weekly-bar casual-bar" style="width: 41%;">
+                    <span>257k</span>
+                </div>
+            </div>
+
+            <div class="bar-track">
+                <div class="weekly-bar member-bar" style="width: 90%;">
+                    <span>566k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tuesday -->
+        <div class="weekly-chart-row">
+            <span class="day-label">Tue</span>
+
+            <div class="bar-track">
+                <div class="weekly-bar casual-bar" style="width: 39%;">
+                    <span>246k</span>
+                </div>
+            </div>
+
+            <div class="bar-track">
+                <div class="weekly-bar member-bar" style="width: 100%;">
+                    <span>631k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wednesday -->
+        <div class="weekly-chart-row">
+            <span class="day-label">Wed</span>
+
+            <div class="bar-track">
+                <div class="weekly-bar casual-bar" style="width: 41%;">
+                    <span>257k</span>
+                </div>
+            </div>
+
+            <div class="bar-track">
+                <div class="weekly-bar member-bar" style="width: 100%;">
+                    <span>632k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thursday -->
+        <div class="weekly-chart-row">
+            <span class="day-label">Thu</span>
+
+            <div class="bar-track">
+                <div class="weekly-bar casual-bar" style="width: 42%;">
+                    <span>268k</span>
+                </div>
+            </div>
+
+            <div class="bar-track">
+                <div class="weekly-bar member-bar" style="width: 99%;">
+                    <span>625k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Friday -->
+        <div class="weekly-chart-row">
+            <span class="day-label">Fri</span>
+
+            <div class="bar-track">
+                <div class="weekly-bar casual-bar" style="width: 53%;">
+                    <span>334k</span>
+                </div>
+            </div>
+
+            <div class="bar-track">
+                <div class="weekly-bar member-bar" style="width: 91%;">
+                    <span>578k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Saturday -->
+        <div class="weekly-chart-row">
+            <span class="day-label">Sat</span>
+
+            <div class="bar-track">
+                <div class="weekly-bar casual-bar" style="width: 72%;">
+                    <span>456k</span>
+                </div>
+            </div>
+
+            <div class="bar-track">
+                <div class="weekly-bar member-bar" style="width: 80%;">
+                    <span>503k</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="finding-insight">
+
+        <p>
+            Casual activity rises toward the weekend and peaks on
+            Saturday. Member activity is strongest from Tuesday
+            through Thursday and peaks on Wednesday. The trip data
+            identifies these usage patterns but does not establish
+            the purpose of the rides.
+        </p>
+
+    </div>
+
+</div>
+<!-- Finding 3 -->
+<div class="analysis-finding">
+
+    <p class="finding-number">
+        FINDING 03
+    </p>
+
+    <h3>
+        Ridership falls sharply in winter and rebounds through spring and summer
+    </h3>
+
+    <p>
+        Both rider groups follow a clear seasonal pattern, with
+        substantially lower activity during winter and much higher
+        ride volumes during summer.
+    </p>
+
+    <div class="seasonality-summary">
+
+        <!-- Casual -->
+        <div class="seasonality-group">
+
+            <div class="seasonality-heading">
+                <strong>Casual riders</strong>
+                <span>More pronounced seasonal swing</span>
+            </div>
+
+            <div class="seasonality-range">
+
+                <div class="season-point season-low">
+                    <span>WINTER LOW</span>
+                    <strong>24,656</strong>
+                    <small>January</small>
+                </div>
+
+                <div class="season-arrow">
+                    <span>→</span>
+                    <small>14.5×</small>
+                </div>
+
+                <div class="season-point season-peak">
+                    <span>SUMMER PEAK</span>
+                    <strong>357,121</strong>
+                    <small>July</small>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Member -->
+        <div class="seasonality-group">
+
+            <div class="seasonality-heading">
+                <strong>Annual members</strong>
+                <span>Higher volume throughout the year</span>
+            </div>
+
+            <div class="seasonality-range">
+
+                <div class="season-point season-low">
+                    <span>WINTER LOW</span>
+                    <strong>112,415</strong>
+                    <small>December</small>
+                </div>
+
+                <div class="season-arrow">
+                    <span>→</span>
+                    <small>4.6×</small>
+                </div>
+
+                <div class="season-point season-peak">
+                    <span>SUMMER PEAK</span>
+                    <strong>520,923</strong>
+                    <small>August</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="supporting-stat">
+        Casual rides increased from <strong>87,631 in March</strong>
+        to <strong>244,654 in May</strong> and
+        <strong>357,121 in July</strong>, showing the acceleration
+        from spring into summer.
+    </p>
+
+    <div class="finding-insight">
+
+        <p>
+            Both groups move in the same broad seasonal direction,
+            but casual riding shows the larger relative swing between
+            winter and summer. Annual members maintain higher ride
+            volumes throughout every month of the analysis period.
+        </p>
+
+    </div>
+
+</div>
+<!-- Finding 4 -->
+<div class="analysis-finding">
+
+    <p class="finding-number">
+        FINDING 04
+    </p>
+
+    <h3>
+        Electric bikes account for most rides; classic-bike trips last longer
+    </h3>
+
+    <p>
+        Bike type reveals two distinct patterns in ride volume
+        and trip duration.
+    </p>
+
+    <div class="bike-summary">
+
+        <!-- Usage -->
+        <div class="bike-summary-card">
+
+            <span class="bike-summary-label">
+                ELECTRIC-BIKE SHARE OF RIDES
+            </span>
+
+            <div class="bike-share-row">
+
+                <div>
+                    <strong>73.7%</strong>
+                    <small>Casual rides</small>
+                </div>
+
+                <div>
+                    <strong>68.1%</strong>
+                    <small>Member rides</small>
+                </div>
+
+            </div>
+
+            <p>
+                Electric bikes account for the majority of observed
+                trips in both rider groups.
+            </p>
+
+        </div>
+
+        <!-- Duration -->
+        <div class="bike-summary-card">
+
+            <span class="bike-summary-label">
+                MEDIAN RIDE DURATION
+            </span>
+
+            <div class="bike-share-row">
+
+                <div>
+                    <strong>10.76 min</strong>
+                    <small>Classic bike</small>
+                </div>
+
+                <div>
+                    <strong>8.74 min</strong>
+                    <small>Electric bike</small>
+                </div>
+
+            </div>
+
+            <p>
+                Classic-bike trips have the longer median duration.
+            </p>
+
+        </div>
+
+    </div>
+
+    <p class="supporting-stat">
+        Mean ride duration follows the same pattern:
+        <strong>18.48 min</strong> for classic bikes versus
+        <strong>12.11 min</strong> for electric bikes.
+    </p>
+
+    <div class="finding-insight">
+
+        <p>
+            Electric bikes account for most observed rides in both
+            rider groups and represent a larger share of casual rides.
+            Classic-bike trips last longer on both median and mean
+            duration. Observed usage should not be interpreted as proof
+            of rider preference because bike availability, pricing and
+            other factors are not captured in the dataset.
+        </p>
+
+    </div>
+
+</div>
+<!-- Share -->
+<section id="share" class="case-study-section">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            05 — SHARE
+        </p>
+
+        <h2>
+            Casual and member riders display distinct behavioral patterns
+        </h2>
+
+        <p class="share-intro">
+            The analysis reveals a consistent behavioral story:
+            casual riders take longer trips and concentrate more
+            activity around the weekend, while annual members generate
+            stronger weekday ride volumes. Both groups show pronounced
+            seasonality, and electric bikes account for most observed rides.
+        </p>
+
+        <div class="stakeholder-takeaway">
+    <span class="takeaway-label">
+        STAKEHOLDER TAKEAWAY
+    </span>
+
+    <p>
+        Casual riders take longer trips and concentrate more activity
+        around weekends, while members generate stronger weekday volume.
+        These observed differences provide a basis for testing targeted
+        membership messaging around the periods when casual riders are
+        most active.
+    </p>
+</div>
+        
+    <div class="dashboard-showcase">
+        
+        <p class="validation-label">
+            TABLEAU DASHBOARD
+        </p>
+        
+        <h3>
+            Cyclistic Rider Behavior Dashboard
+        </h3>
+        
+        <p>
+             An interactive dashboard brings the key behavioral
+             comparisons together in a single stakeholder view.
+        </p>
+        
+        <figure class="dashboard-figure">
+            
+            <img
+                src="images/cyclistic-rider-behavior-dashboard.png"
+                alt="Cyclistic Rider Behavior Dashboard showing ride duration, weekly riding patterns, monthly rider trends and bike-type analysis."
+            >
+
+            <figcaption>
+                Cyclistic rider behavior analysis — September 2025
+                through August 2026.
+            </figcaption>
+
+        </figure>
+        
+        <div class="visualization-rationale">
+            
+            <h3>
+                Visualization design decisions
+            </h3>
+
+            <p>
+                Each visualization was selected according to the type of
+                comparison being communicated.
+            </p>
+
+        <div class="visualization-grid">
+
+        <div>
+            <span>COMPARISON</span>
+            <h4>Bar Charts</h4>
+            <p>
+                Used for ride duration and day-of-week comparisons,
+                where the goal is to compare values across discrete
+                rider, bike and weekday categories.
+            </p>
+        </div>
+
+        <div>
+            <span>CHANGE OVER TIME</span>
+            <h4>Line Charts</h4>
+            <p>
+                Used for monthly rider and bike-type activity because
+                the months form an ordered time series. Connecting
+                observations makes seasonality and changes over time
+                easier to identify.
+            </p>
+        </div>
+
+    </div>
+
+    <p class="design-note">
+        Individual value labels were removed from the monthly line
+        charts to reduce visual clutter, allowing the trajectories
+        and seasonal patterns to remain the primary focus.
+    </p>
+
+</div>
+<!-- Act -->
+<section id="act" class="case-study-section case-study-section-light">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            06 — ACT
+        </p>
+
+        <h2>
+            Turning behavioral insights into testable marketing actions
+        </h2>
+
+        <p>
+            The analysis identifies behavioral differences that
+            Cyclistic can use to develop and test strategies for
+            converting casual riders into annual members. These
+            recommendations are hypotheses informed by observed
+            behavior rather than guaranteed outcomes.
+        </p>
+
+       <!-- Recommendation 1 -->
+<div class="recommendation-card">
+
+    <p class="recommendation-number">
+        01 — OPPORTUNITY
+    </p>
+
+    <h3>
+        Weekend casual-rider activity creates a clear conversion-testing window
+    </h3>
+
+    <div class="recommendation-stat">
+
+        <strong>455,707</strong>
+
+        <span>
+            Casual rides on Saturday
+        </span>
+
+        <small>
+            Highest casual ride volume of the week
+        </small>
+
+    </div>
+
+    <div class="recommendation-action">
+
+        <span>ACTION</span>
+
+        <p>
+            Test membership-conversion messaging around periods of
+            high casual-rider activity, particularly weekends, using
+            appropriate owned or paid customer touchpoints.
+        </p>
+
+    </div>
+
+    <div class="recommendation-hypothesis">
+
+        <span>HYPOTHESIS</span>
+
+        <p>
+            Reaching casual riders during high-activity periods may
+            improve the relevance and performance of
+            membership-conversion messaging.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Recommendation 2 -->
+<div class="recommendation-card">
+
+    <p class="recommendation-number">
+        02 — OPPORTUNITY
+    </p>
+
+    <h3>
+        Rising spring demand creates an earlier window for membership conversion
+    </h3>
+
+    <div class="recommendation-stat">
+
+        <strong>87,631 → 357,121</strong>
+
+        <span>
+            Casual rides from March to July
+        </span>
+
+        <small>
+            Casual ride volume was over 4× higher in July than March
+        </small>
+
+    </div>
+
+    <div class="recommendation-action">
+
+        <span>ACTION</span>
+
+        <p>
+            Test membership-conversion campaigns as casual-rider
+            activity begins accelerating in spring, then continue
+            through the higher-volume summer period rather than
+            waiting until the seasonal peak.
+        </p>
+
+    </div>
+
+    <div class="recommendation-hypothesis">
+
+        <span>HYPOTHESIS</span>
+
+        <p>
+            Starting conversion activity as seasonal demand builds
+            may create more opportunities to reach active casual
+            riders before and during the highest-usage months.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Recommendation 3 -->
+<div class="recommendation-card">
+
+    <p class="recommendation-number">
+        03 — OPPORTUNITY
+    </p>
+
+    <h3>
+        High electric-bike usage creates a relevant audience for message testing
+    </h3>
+
+    <div class="recommendation-stat">
+
+        <strong>73.7%</strong>
+
+        <span>
+            Of casual rides were made on electric bikes
+        </span>
+
+        <small>
+            1,589,947 electric-bike rides vs 565,971 classic-bike rides
+        </small>
+
+    </div>
+
+    <div class="recommendation-action">
+
+        <span>ACTION</span>
+
+        <p>
+            Test membership creative and messaging relevant to
+            electric-bike users, ensuring that any claims about
+            membership benefits, pricing or bike access accurately
+            reflect Cyclistic's service offering.
+        </p>
+
+    </div>
+
+    <div class="recommendation-hypothesis">
+
+        <span>HYPOTHESIS</span>
+
+        <p>
+            Messaging that reflects the observed bike usage of
+            casual riders may be more relevant to this audience
+            and could improve membership-conversion performance.
+        </p>
+
+    </div>
+
+</div>
+
+   <!-- Measurement Framework -->
+<div class="measurement-framework">
+
+    <p class="recommendation-number">
+        MEASUREMENT FRAMEWORK
+    </p>
+
+    <h3>
+        How would we know if these actions worked?
+    </h3>
+
+    <p class="measurement-intro">
+        The behavioral analysis identifies potential conversion
+        opportunities. Controlled testing can determine whether
+        the proposed marketing actions produce incremental membership conversions.
+    </p>
+
+
+    <!-- Experiment Design -->
+<div class="measurement-section">
+
+    <span class="measurement-label">
+        EXPERIMENT DESIGN
+    </span>
+
+    <div class="experiment-grid">
+
+        <div class="experiment-card">
+
+            <span class="experiment-label">
+                TEST GROUP
+            </span>
+
+            <strong>
+                Exposed casual riders
+            </strong>
+
+            <p>
+                Eligible casual riders receive the tested
+                membership-conversion message.
+            </p>
+
+        </div>
+
+        <div class="experiment-card">
+
+            <span class="experiment-label">
+                CONTROL GROUP
+            </span>
+
+            <strong>
+                Comparable casual riders
+            </strong>
+
+            <p>
+                A comparable group does not receive the tested
+                intervention, providing a baseline for comparison.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- Key Metrics -->
+    <div class="measurement-section">
+
+        <span class="measurement-label">
+            KEY METRICS
+        </span>
+
+        <div class="measurement-grid">
+
+            <div>
+                <span>PRIMARY KPI</span>
+
+                <strong>
+                    Membership Conversion Rate
+                </strong>
+
+                <p>
+                    Percentage of targeted casual riders who
+                    become annual members.
+                </p>
+            </div>
+
+            <div>
+                <span>EFFICIENCY KPI</span>
+
+                <strong>
+                    Cost per Acquired Member
+                </strong>
+
+                <p>
+                    Marketing cost required to generate each
+                    new annual membership.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Analysis -->
+    <div class="measurement-section">
+
+        <span class="measurement-label">
+            ANALYSIS CUTS
+        </span>
+
+        <p class="analysis-cuts">
+            Weekend vs. weekday
+            <span>•</span>
+            seasonal timing
+            <span>•</span>
+            relevant rider and bike-use segments
+        </p>
+
+    </div>
+
+
+    <!-- Success Signal -->
+    <div class="success-signal">
+
+        <span>
+            SUCCESS SIGNAL
+        </span>
+
+        <strong>
+            Positive incremental lift in annual membership
+            conversion versus the control group.
+        </strong>
+
+    </div>
+
+
+    <!-- Final Measurement Takeaway -->
+    <div class="experiment-note">
+
+        <strong>
+            Measure incrementality, not just conversions.
+        </strong>
+
+        <p>
+            Campaign-attributed sign-ups alone do not establish
+            whether the marketing generated additional memberships.
+            Controlled testing provides stronger evidence of
+            incremental impact.
+        </p>
+
+    </div>
+
+</div> <!-- END Measurement Framework -->
+
+
+<!-- Case Study Conclusion -->
+<div class="case-study-conclusion">
+
+    <p class="recommendation-number">
+        CASE STUDY CONCLUSION
+    </p>
+
+    <h2>
+        Casual riders represent a measurable membership-conversion opportunity
+    </h2>
+
+    <p class="conclusion-summary">
+        The analysis found consistent differences between casual riders
+        and annual members across ride duration, weekly usage and bike type,
+        alongside strong seasonal variation in overall riding activity.
+    </p>
+
+    <div class="conclusion-takeaway">
+
+        <span>BUSINESS TAKEAWAY</span>
+
+        <strong>
+            Cyclistic can use these observed behavioral patterns to
+            determine when and where membership messaging should be tested,
+            then use controlled experiments to measure whether those
+            interventions generate incremental membership conversions.
+        </strong>
+
+    </div>
+
+    <p class="conclusion-note">
+        The analysis identifies opportunities rather than proving causation.
+        Campaign effectiveness should therefore be validated through
+        controlled testing before broader investment decisions are made.
+    </p>
+
+</div>
+<!-- END Case Study Conclusion -->
+
+
+    <!-- Limitations -->
+<section id="limitations" class="case-study-section">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            07 — LIMITATIONS
+        </p>
+
+        <h2>
+            What the data cannot tell us
+        </h2>
+
+        <p>
+            The analysis identifies meaningful behavioral patterns,
+            but several limitations affect how those patterns should
+            be interpreted.
+        </p>
+
+        <div class="limitations-grid">
+
+            <div>
+                <h3>No unique rider identifier</h3>
+                <p>
+                    The dataset identifies individual trips rather
+                    than persistent riders, so repeat usage and
+                    individual conversion potential cannot be
+                    measured.
+                </p>
+            </div>
+
+            <div>
+                <h3>No trip-purpose data</h3>
+                <p>
+                    The dataset does not indicate whether rides were
+                    taken for commuting, recreation, tourism,
+                    exercise or another purpose.
+                </p>
+            </div>
+
+            <div>
+                <h3>External factors are not included</h3>
+                <p>
+                    Weather, holidays, tourism, events, daylight and
+                    bike availability may contribute to observed
+                    seasonal and usage patterns.
+                </p>
+            </div>
+
+            <div>
+                <h3>Usage does not prove preference</h3>
+                <p>
+                    Observed bike type reflects actual trips but does
+                    not establish why a rider selected a classic or
+                    electric bike.
+                </p>
+            </div>
+
+            <div>
+                <h3>Observational, not causal</h3>
+                <p>
+                    The analysis identifies associations in rider
+                    behavior but cannot establish that the proposed
+                    marketing actions will cause membership
+                    conversion.
+                </p>
+            </div>
+        
+        </div>
+
+    </div>
+    <!-- Conclusion -->
+<section id="conclusion" class="case-study-section case-study-section-light">
+
+    <div class="section-container case-study-content">
+
+        <p class="eyebrow">
+            08 — CONCLUSION
+        </p>
+
+        <div class="case-study-conclusion">
+
+            <p class="recommendation-number">
+                CASE STUDY CONCLUSION
+            </p>
+
+            <h2>
+                Casual riders represent a measurable membership-conversion opportunity
+            </h2>
+
+            <p class="conclusion-summary">
+                Analysis of more than 6.1 million trips identified
+                consistent differences between casual riders and annual
+                members across ride duration, weekly behavior and bike
+                usage, alongside strong seasonal variation in ridership.
+            </p>
+
+            <div class="conclusion-takeaway">
+
+                <span>
+                    BUSINESS TAKEAWAY
+                </span>
+
+                <strong>
+                    Cyclistic can use these observed behavioral patterns
+                    to determine when and where membership messaging
+                    should be tested, then use controlled experiments
+                    to measure whether those interventions generate
+                    incremental membership conversions.
+                </strong>
+
+            </div>
+
+            <p class="conclusion-note">
+                The analysis identifies opportunities rather than proving
+                causation. Campaign effectiveness should therefore be
+                validated through controlled testing before broader
+                investment decisions are made.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <p>
+            © 2026 AdeCole. All rights reserved.
+        </p>
+
+    </footer>
+<script>
+    const caseStudySections = document.querySelectorAll(
+        "#overview, #ask, #prepare, #process, #analyze, #share, #act"
+    );
+
+    const caseStudyLinks = document.querySelectorAll(
+        ".case-study-nav-links a"
+    );
+
+    function updateActiveSection() {
+
+        let currentSection = "";
+
+        caseStudySections.forEach(section => {
+
+            const sectionTop = section.offsetTop;
+
+            if (window.scrollY >= sectionTop - 180) {
+                currentSection = section.getAttribute("id");
+            }
+
+        });
+
+        caseStudyLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") ===
+                "#" + currentSection
+            ) {
+                link.classList.add("active");
+            }
+
+        });
+
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateActiveSection
+    );
+
+    updateActiveSection();
+</script>
+</body>
+
+</html>

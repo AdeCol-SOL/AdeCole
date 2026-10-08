@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bellabeat Smart Device Behavior Analysis | AdeCole</title>
+
+    <meta
+        name="description"
+        content="Bellabeat smart device behavior analysis examining activity, sleep and sedentary behavior using Python, Pandas and Tableau."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                AdeCole
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#assessment">Assessment</a>
+                <a href="index.html#projects">Case Studies</a>
+                <a href="index.html#insights">Insights</a>
+                <a href="index.html#about">About</a>
+            </div>
+
+            <a href="index.html#contact" class="nav-cta">
+                Book a Consultation
+            </a>
+
+        </nav>
+    </header>
+<nav class="case-study-nav">
+    <div class="case-study-nav-inner">
+
+        <span class="case-study-label">
+            BELLABEAT CASE STUDY
+        </span>
+
+        <div class="case-study-links">
+            <a href="#overview">Overview</a>
+            <a href="#business-question">Business Question</a>
+            <a href="#approach">Approach</a>
+            <a href="#findings">Findings</a>
+            <a href="#recommendations">Recommendations</a>
+            <a href="#dashboard">Dashboard</a>
+        </div>
+
+    </div>
+</nav>
+
+    <main>
+
+        <!-- Case Study Hero -->
+        <section class="case-study-hero" id="overview">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    DATA ANALYTICS CASE STUDY
+                </p>
+
+                <h1>
+                    Bellabeat Smart Device Behavior Analysis
+                </h1>
+
+                <p class="hero-text">
+                    Exploring activity, sleep and sedentary behavior to
+                    identify patterns that can inform data-driven wellness
+                    engagement and marketing strategy.
+                </p>
+
+                <p>
+                    <strong>Python · Pandas · Tableau</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Business Question -->
+        <section class="problem" id="business-question">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    BUSINESS QUESTION
+                </p>
+
+                <h2>
+                    How can smart-device behavior inform Bellabeat's
+                    customer engagement strategy?
+                </h2>
+
+                <p>
+                    The analysis examines how users behave across activity,
+                    sleep and sedentary measures to identify patterns that
+                    may reveal opportunities for more relevant wellness
+                    engagement.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Analytical Approach -->
+        <section class="methodology" id="approach">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    ANALYTICAL APPROACH
+                </p>
+
+                <h2>
+                    From raw behavioral data to actionable insight.
+                </h2>
+
+                <div class="method-grid">
+
+                    <div class="method-card">
+                        <span>01</span>
+                        <h3>Prepare</h3>
+                        <p>
+                            Cleaned and prepared activity and sleep data
+                            using Python and Pandas.
+                        </p>
+                    </div>
+
+                    <div class="method-card">
+                        <span>02</span>
+                        <h3>Analyze</h3>
+                        <p>
+                            Examined activity, sleep and sedentary behavior
+                            and compared patterns across the week.
+                        </p>
+                    </div>
+
+                    <div class="method-card">
+                        <span>03</span>
+                        <h3>Visualize</h3>
+                        <p>
+                            Built Tableau visualizations to communicate
+                            behavioral patterns and relationships.
+                        </p>
+                    </div>
+
+                    <div class="method-card">
+                        <span>04</span>
+                        <h3>Recommend</h3>
+                        <p>
+                            Translated analytical findings into potential
+                            wellness engagement opportunities.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+<!-- Data Scope & Limitations -->
+<section class="problem">
+
+    <div class="section-container">
+
+        <p class="eyebrow">
+            DATA SCOPE & LIMITATIONS
+        </p>
+
+        <h2>
+            Understanding the boundaries of the analysis.
+        </h2>
+
+        <p>
+            The analysis uses publicly available smart-device activity
+            and sleep data. Activity records represent 35 participants,
+            while sleep records represent 24 participants, with 410
+            matched activity-sleep records used for the combined analysis.
+        </p>
+
+        <p>
+            Because the dataset represents a relatively small sample and
+            does not provide sufficient demographic information to establish
+            whether participants are representative of Bellabeat's target
+            customers, the findings should be interpreted as behavioral
+            signals rather than population-wide conclusions.
+        </p>
+
+        <p>
+            The findings therefore identify patterns and potential
+            engagement opportunities that should be validated using larger,
+            more representative first-party datasets.
+        </p>
+
+    </div>
+
+</section>
+
+        <!-- Key Findings -->
+        <section class="services" id="findings">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    KEY FINDINGS
+                </p>
+
+                <h2>
+                    What the behavioral data revealed.
+                </h2>
+
+                <div class="services-grid">
+
+             <article class="bellabeat-finding-card">
+
+    <div class="bellabeat-finding-header">
+        <div class="bellabeat-finding-icon activity-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <h3>Activity varies<br>across the week</h3>
+    </div>
+
+    <p class="bellabeat-finding-evidence">
+        Average daily steps peaked on Tuesday at 8,668 steps,
+        with Saturday close behind at 8,667. Sunday recorded
+        the lowest average at 7,457 steps — approximately
+        16% below Tuesday.
+    </p>
+
+    <div class="bellabeat-finding-business">
+        <h4>BUSINESS IMPLICATION</h4>
+
+        <p>
+            Lower-activity periods may provide an opportunity
+            to test timely motivational messaging or activity prompts.
+        </p>
+    </div>
+
+</article>
+
+            <article class="bellabeat-finding-card">
+        <div class="bellabeat-finding-header">
+
+            <div class="bellabeat-finding-icon intensity-icon" aria-hidden="true">
+             <span>♦</span>
+            </div>
+
+            <h3>Higher-intensity activity<br>
+                aligns with calorie expenditure
+            </h3>
+        </div>
+    <p class="bellabeat-finding-evidence">
+        Very active minutes showed a positive correlation
+        with daily calories burned (r = 0.61), indicating
+        that higher-intensity activity tended to coincide
+        with greater calorie expenditure.
+    </p>
+<div class="bellabeat-finding-business">
+        <h4>
+            BUSINESS IMPLICATION
+
+        </h4>
+
+    <p>
+        Bellabeat could test personalized activity goals
+        and progress messaging that connects active
+        behavior with measurable wellness outcomes.
+    </p>
+</div>
+</article><article class="bellabeat-finding-card">
+
+    <div class="bellabeat-finding-header">
+        <div class="bellabeat-finding-icon sleep-icon" aria-hidden="true">
+            <span></span>
+        </div>
+
+        <h3>Sleep duration<br>and efficiency vary</h3>
+    </div>
+
+    <p class="bellabeat-finding-evidence">
+        Average sleep duration was highest on Sunday at
+        approximately 7h 33m, compared with 6h 41m on
+        Thursday — a difference of about 51 minutes.
+
+        Sunday also recorded the lowest average sleep
+        efficiency (90.5%), while Thursday recorded the
+        highest (92.3%).
+    </p>
+
+    <div class="bellabeat-finding-business">
+        <h4>BUSINESS IMPLICATION</h4>
+
+        <p>
+            Sleep duration and sleep efficiency should be
+            treated as separate behaviors in engagement
+            and messaging.
+        </p>
+    </div>
+
+</article>
+
+<article class="bellabeat-sedentary-card">
+
+    <div class="bellabeat-sedentary-content">
+
+        <h3>
+            Sedentary time is associated with shorter sleep
+        </h3>
+
+        <p class="bellabeat-sedentary-evidence">
+            Sedentary minutes showed a moderate negative correlation
+            with total minutes asleep (r = -0.60) across the matched
+            activity-sleep records. Higher sedentary time therefore
+            tended to coincide with shorter sleep duration.
+        </p>
+
+        <div class="bellabeat-correlation">
+            <span>CORRELATION COEFFICIENT</span>
+            <strong>r = -0.60</strong>
+        </div>
+
+        <div class="bellabeat-sedentary-business">
+            <h4>BUSINESS IMPLICATION</h4>
+
+            <p>
+                Bellabeat could test interventions that encourage users
+                to break up prolonged sedentary periods while measuring
+                the impact on sleep.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="bellabeat-sedentary-visual">
+        <img
+            src="images/bellabeat-sedentary-sleep.png"
+            alt="Scatter plot showing the relationship between sedentary time and sleep duration">
+    </div>
+
+</article>
+
+        </section>
+
+
+        <!-- Business Recommendation -->
+        <section class="transformation" id="recommendations">
+
+    <div class="section-container">
+
+        <p class="eyebrow">
+            BUSINESS IMPLICATION
+        </p>
+
+        <h2>
+            Turn behavioral signals into relevant engagement.
+        </h2>
+
+        <p class="recommendations-intro">
+            The analysis identifies behavioral patterns that Bellabeat
+            could use to design and test more relevant wellness engagement.
+            Interventions could respond to activity, sleep and sedentary
+            behavior while measuring whether they improve engagement and
+            wellness outcomes.
+        </p>
+
+        <div class="recommendation-grid">
+
+            <article class="recommendation-card">
+                <span class="recommendation-number">01</span>
+                <h3>Activate lower-activity periods</h3>
+                <p>
+                    Test timely motivational prompts during historically
+                    lower-activity periods, particularly around Sunday behavior.
+                </p>
+                <p class="measure">
+                    <strong>Measure:</strong> steps after prompts and engagement rate.
+                </p>
+            </article>
+
+            <article class="recommendation-card">
+                <span class="recommendation-number">02</span>
+                <h3>Personalize activity goals</h3>
+                <p>
+                    Use activity intensity and recent behavior to test
+                    personalized goals and progress messages.
+                </p>
+                <p class="measure">
+                    <strong>Measure:</strong> active minutes, goal completion
+                    and app engagement.
+                </p>
+            </article>
+
+            <article class="recommendation-card">
+                <span class="recommendation-number">03</span>
+                <h3>Support sleep consistency</h3>
+                <p>
+                    Test sleep reminders informed by recent sleep patterns
+                    and day-of-week variation.
+                </p>
+                <p class="measure">
+                    <strong>Measure:</strong> sleep duration, consistency
+                    and reminder engagement.
+                </p>
+            </article>
+
+            <article class="recommendation-card">
+                <span class="recommendation-number">04</span>
+                <h3>Reduce prolonged sedentary periods</h3>
+                <p>
+                    Test sedentary-break reminders and evaluate whether
+                    changes in sedentary behavior are accompanied by changes
+                    in sleep.
+                </p>
+                <p class="measure">
+                    <strong>Measure:</strong> sedentary minutes, sleep duration
+                    and response rate.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Measurement & Next Steps -->
+<section class="methodology">
+
+    <div class="section-container">
+
+        <p class="eyebrow">
+            MEASUREMENT & NEXT STEPS
+        </p>
+
+        <h2>
+            Turn behavioral insights into testable growth opportunities.
+        </h2>
+
+        <div class="method-grid">
+
+            <div class="method-card">
+                <span>01</span>
+                <h3>Segment</h3>
+                <p>
+                    Group users by behavioral signals such as activity level,
+                    sedentary time, sleep patterns and device engagement
+                    to support more relevant messaging.
+                </p>
+            </div>
+
+            <div class="method-card">
+                <span>02</span>
+                <h3>Personalize</h3>
+                <p>
+                    Test personalized wellness messages such as activity
+                    encouragement, sedentary-time reminders and
+                    sleep-support content.
+                </p>
+            </div>
+
+            <div class="method-card">
+                <span>03</span>
+                <h3>Measure</h3>
+                <p>
+                    Track engagement with interventions using metrics such
+                    as notification interaction, app engagement, feature
+                    adoption and subsequent behavioral change.
+                </p>
+            </div>
+
+            <div class="method-card">
+                <span>04</span>
+                <h3>Experiment</h3>
+                <p>
+                    Use controlled experiments to determine whether
+                    personalized interventions improve engagement and
+                    wellness behaviors compared with standard messaging.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- Dashboard -->
+        <section class="projects" id="dashboard">
+
+            <div class="section-container">
+
+                <p class="eyebrow">
+                    INTERACTIVE ANALYSIS
+                </p>
+
+                <h2>
+                    Explore the Tableau dashboard.
+                </h2>
+
+                <p>
+                    View the complete interactive visualization covering
+                    activity, participant variation, sleep and sedentary
+                    behavior.
+                </p>
+
+<div class="bellabeat-dashboard-preview">
+    <img
+        src="images/bellabeat-smart-device-dashboard.png"
+        alt="Bellabeat Smart Device Behavior Analysis Tableau dashboard showing activity, sleep and sedentary behavior insights"
+    >
+</div>
+                <a
+    href="https://public.tableau.com/app/profile/adesola.ade.cole/viz/Bellabeat_Smart_Device_Behavior_Analytics/SmartDeviceBehaviorOverview"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn-primary"
+>
+    View Interactive Dashboard →
+</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <p>
+            © 2026 AdeCole. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>
