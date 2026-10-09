@@ -3105,7 +3105,7 @@ p {
 }
 
 .bellabeat-sedentary-visual {
-    display: flex;
+    display: block;
     align-items: center;
 }
 
@@ -3159,6 +3159,22 @@ p {
     }
 
     .dashboard-figure img {
+        width: 900px;
+        max-width: none;
+        height: auto;
+    }
+}
+@media (max-width: 768px) {
+    .bellabeat-sedentary-visual {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #findings .bellabeat-sedentary-visual img {
+        display: block;
         width: 900px;
         max-width: none;
         height: auto;
