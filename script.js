@@ -653,3 +653,28 @@ if (saveDiagnostic) {
 }
 
 });
+const leadForm = document.getElementById("assessment-lead-form");
+
+if (leadForm) {
+  leadForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(leadForm.action, {
+        method: "POST",
+        body: new FormData(leadForm),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        window.location.href = "thank-you.html";
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (error) {
+      alert("Unable to submit. Please check your connection.");
+    }
+  });
+}
