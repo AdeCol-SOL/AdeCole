@@ -921,10 +921,6 @@ p {
 .secondary-button {
     display: inline-block;
 
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-
-    padding: 0.75rem 1.25rem;
 
     background: #ffffff;
     border: 1px solid #cbd5e1;
@@ -3179,4 +3175,220 @@ p {
         max-width: none;
         height: auto;
     }
+}
+/* ==================================
+   ASSESSMENT LEAD FORM
+   ================================== */
+
+.assessment-lead {
+  padding: 80px 24px;
+  background: linear-gradient(
+    135deg,
+    #f7faff 0%,
+    #edf4ff 100%
+  );
+}
+
+.assessment-lead .section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section heading */
+
+.assessment-lead h2 {
+  text-align: center;
+  color: #0b1736;
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 18px;
+}
+
+.assessment-lead .section-container > p {
+  text-align: center;
+  color: #526584;
+  max-width: 850px;
+  margin: 0 auto 45px;
+  line-height: 1.7;
+}
+
+/* Two-column layout */
+
+.assessment-lead-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Benefits */
+
+.assessment-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.assessment-benefit h3 {
+  color: #0b1736;
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.assessment-benefit p {
+  color: #526584;
+  line-height: 1.7;
+}
+
+/* Form card */
+
+#assessment-lead-form {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(10, 35, 80, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#assessment-lead-form label {
+  color: #0b1736;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+#assessment-lead-form input,
+#assessment-lead-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+#assessment-lead-form input:focus,
+#assessment-lead-form textarea:focus {
+  outline: 2px solid #0057e7;
+  outline-offset: 1px;
+}
+
+#assessment-lead-form button {
+  background: #0057e7;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+#assessment-lead-form button:hover {
+  background: #0044b8;
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+  .assessment-lead {
+    padding: 50px 18px;
+  }
+
+  .assessment-lead-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  #assessment-lead-form {
+    padding: 25px 20px;
+  }
+
+  #assessment-lead-form button {
+    width: 100%;
+  }
+}
+/* Start a Conversation CTA layout */
+
+.contact .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.contact .hero-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .contact .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact .hero-buttons a {
+        width: 100%;
+    }
+}
+/* Balanced Start a Conversation buttons */
+.contact .hero-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+    min-width: 0;
+    min-height: 60px;
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Keep buttons responsive */
+@media (max-width: 600px) {
+    .contact .hero-buttons a {
+        width: 100%;
+    }
+}
+.assessment-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.benefit-icon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.benefit-icon-blue {
+    background: #e8f1ff;
+}
+.benefit-icon-green {
+    background: #e7f8ef;
+}
+
+.benefit-icon-purple {
+    background: #f0eaff;
 }
