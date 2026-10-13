@@ -669,7 +669,15 @@ if (leadForm) {
       });
 
       if (response.ok) {
-        window.location.href = "thank-you.html";
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+        event: "consultation_form_success"
+    });
+
+    setTimeout(() => {
+    window.location.href = "thank-you.html";
+}, 1000);
       } else {
         alert("Submission failed. Please try again.");
       }
