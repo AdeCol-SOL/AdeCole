@@ -163,7 +163,7 @@ function displayQuestion(questionIndex) {
     });
 
     assessmentResult.classList.remove("visible");
-
+    assessmentResult.innerHTML = "";
     nextQuestion.disabled = true;
 
 }
@@ -196,11 +196,11 @@ assessmentOptions.forEach((option) => {
 
         nextQuestion.disabled = false;
 
-        assessmentResult.innerHTML = `
-            <p>
-                Score recorded: <strong>${score}/4</strong>
-            </p>
-        `;
+       assessmentResult.innerHTML = `
+    <p>
+        ✓ Answer selected. Click Next to continue.
+    </p>
+`;
 
         assessmentResult.classList.add("visible");
 
