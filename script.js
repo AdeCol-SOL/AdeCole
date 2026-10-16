@@ -98,7 +98,7 @@ const questions = [
         dimension: "measurement",
 
         question:
-            "When someone becomes a customer, can you reliably identify which marketing activity influenced that outcome?",
+            "How effectively does your business track conversions and measure the contribution of different marketing activities to customer aquisition?",
 
         options: [
             "Not at all.",
