@@ -4,6 +4,12 @@ const navLinks = document.getElementById("navLinks");
 menuToggle.addEventListener("click", function () {
     navLinks.classList.toggle("active");
 });
+// Close mobile menu when a navigation link is selected
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+    });
+});
 
 window.dataLayer = window.dataLayer || [];
 
