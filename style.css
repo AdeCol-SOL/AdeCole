@@ -3392,3 +3392,132 @@ p {
 .benefit-icon-purple {
     background: #f0eaff;
 }
+/* =========================================
+   Analytics Consent Banner
+========================================= */
+
+.consent-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 760px;
+  padding: 24px;
+  background: #10243a;
+  color: #ffffff;
+  border: 1px solid #3b526a;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+}
+
+.consent-banner[hidden] {
+  display: none;
+}
+
+.consent-content h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.consent-content p {
+  margin: 0 0 20px;
+  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.consent-actions button {
+  flex: 1;
+  min-width: 160px;
+  padding: 12px 18px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#accept-analytics {
+  background: #ffffff;
+  color: #10243a;
+}
+
+#reject-analytics {
+  background: transparent;
+  color: #ffffff;
+}
+
+.consent-actions button:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .consent-banner {
+    bottom: 12px;
+    padding: 18px;
+    max-height: calc(100vh - 24px);
+    overflow-y: auto;
+  }
+
+  .consent-actions {
+    flex-direction: column;
+  }
+
+  .consent-actions button {
+    width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+}
+/* Privacy Policy Page */
+
+.privacy-policy-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    line-height: 1.8;
+}
+
+.privacy-policy-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.privacy-policy-container h2 {
+    font-size: 1.5rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.privacy-policy-container p {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .privacy-policy-container {
+        margin: 30px auto;
+        padding: 25px 20px;
+    }
+
+    .privacy-policy-container h1 {
+        font-size: 2rem;
+    }
+
+    .privacy-policy-container h2 {
+        font-size: 1.3rem;
+    }
+}

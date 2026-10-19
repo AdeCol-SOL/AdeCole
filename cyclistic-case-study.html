@@ -3,22 +3,42 @@
 <html lang="en">
 
 <head>
+    <!-- Default Google Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),
-            dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-W7QFLXDS');
-    </script>
-    <!-- End Google Tag Manager -->
+  function gtag() {
+    dataLayer.push(arguments);
+  }
 
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+  // Restore a previously saved analytics preference
+try {
+  const savedConsent = localStorage.getItem('adecole_analytics_consent');
+
+  if (savedConsent === 'granted') {
+    gtag('consent', 'update', {
+      analytics_storage: 'granted'
+    });
+  }
+} catch (error) {
+  // Keep analytics denied if browser storage is unavailable.
+}
+</script>
+<!-- End Default Consent Mode -->
+ <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W7QFLXDS');</script>
+
+    
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -1576,7 +1596,12 @@
         <p>
             © 2026 AdeCole. All rights reserved.
         </p>
-
+        <a href="privacy-policy.html" class="privacy-policy-link">
+    Privacy Policy
+</a>
+<button type="button" id="open-privacy-settings" class="privacy-settings-btn">
+  Privacy Settings
+</button>
     </footer>
 <script>
     const caseStudySections = document.querySelectorAll(
@@ -1623,6 +1648,31 @@
 
     updateActiveSection();
 </script>
+<!-- Analytics Consent Banner -->
+<div id="consent-banner" class="consent-banner" hidden>
+  <div class="consent-content">
+    <h2>Your Privacy Matters</h2>
+
+    <p>
+      We use optional analytics cookies to understand how visitors
+      interact with AdeCole Digital and improve our website.
+      You can accept or reject analytics without affecting
+      access to our services.
+    </p>
+
+    <div class="consent-actions">
+      <button type="button" id="accept-analytics">
+        Accept Analytics
+      </button>
+
+      <button type="button" id="reject-analytics">
+        Reject Analytics
+      </button>
+    </div>
+  </div>
+</div>
+<!-- End Analytics Consent Banner -->
+<script src="script.js"></script>
 </body>
 
 </html>

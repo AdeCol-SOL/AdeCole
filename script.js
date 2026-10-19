@@ -1,15 +1,19 @@
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-});
-// Close mobile menu when a navigation link is selected
-navLinks.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
     });
-});
+}
+// Close mobile menu when a navigation link is selected
+if (navLinks) {
+    navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+}
 
 window.dataLayer = window.dataLayer || [];
 
@@ -468,7 +472,7 @@ return result;
    NEXT QUESTION
    ========================= */
 
-nextQuestion.addEventListener("click", () => {
+if (nextQuestion) nextQuestion.addEventListener("click", () => {
 
     if (currentQuestion < questions.length) {
 
@@ -691,4 +695,67 @@ if (leadForm) {
       alert("Unable to submit. Please check your connection.");
     }
   });
+} 
+
+// ==========================================
+// Analytics Consent Management
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("consent-banner");
+  const acceptButton = document.getElementById("accept-analytics");
+  const rejectButton = document.getElementById("reject-analytics");
+  const privacySettingsButton = document.getElementById("open-privacy-settings");
+  if (!banner || !acceptButton || !rejectButton) return;
+
+  const storageKey = "adecole_analytics_consent";
+
+  let savedConsent = null;
+
+  try {
+    savedConsent = localStorage.getItem(storageKey);
+  } catch (error) {
+    // Browser storage may be unavailable.
+  }
+
+  // Show banner if visitor has not made a choice.
+  if (savedConsent !== "granted" && savedConsent !== "denied") {
+    banner.hidden = false;
+  }
+
+  function saveConsent(choice) {
+    try {
+      localStorage.setItem(storageKey, choice);
+    } catch (error) {
+      // Consent still applies to the current page.
+    }
+
+    if (typeof gtag === "function") {
+      gtag("consent", "update", {
+        analytics_storage: choice
+      });
+    }
+
+    banner.hidden = true;
+
+    // Reload so consent-restricted GTM tags initialize
+    // using the visitor's saved preference.
+    if (choice === "granted") {
+      window.location.reload();
+    }
+  }
+
+  acceptButton.addEventListener("click", () => {
+    saveConsent("granted");
+  });
+
+  rejectButton.addEventListener("click", () => {
+    saveConsent("denied");
+  });
+  if (privacySettingsButton) {
+    privacySettingsButton.addEventListener("click", () => {
+        banner.hidden = false;
+        acceptButton.focus();
+    });
 }
+});
