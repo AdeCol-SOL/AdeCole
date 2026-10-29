@@ -3566,4 +3566,46 @@ p {
     .marketing-findings-grid {
         grid-template-columns: 1fr;
     }
+}/* Related Case Studies */
+.related-case-studies {
+    margin-top: 48px;
+    padding: 36px 28px;
+    background: #f5f7fa;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.related-case-studies h2 {
+    margin-bottom: 12px;
+}
+
+.related-case-studies p {
+    max-width: 650px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+}
+
+.related-case-study-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.related-case-study-links a {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #d6dce5;
+    border-radius: 8px;
+    color: #173b67;
+    background: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.related-case-study-links a:hover {
+    background: #173b67;
+    color: #ffffff;
 }
