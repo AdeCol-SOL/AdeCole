@@ -3050,12 +3050,13 @@ p {
    ========================================= */
 
 .bellabeat-sedentary-card {
-    
-    display: block;
+    display: grid;
+    grid-template-columns: 0.95fr 1.35fr;
     gap: 32px;
     align-items: center;
-    
+
     width: 100%;
+    margin-top: 2rem;
     padding: 28px 30px;
 
     background: #ffffff;
