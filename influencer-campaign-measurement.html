@@ -1,0 +1,681 @@
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Default Google Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+  // Restore a previously saved analytics preference
+try {
+  const savedConsent = localStorage.getItem('adecole_analytics_consent');
+
+  if (savedConsent === 'granted') {
+    gtag('consent', 'update', {
+      analytics_storage: 'granted'
+    });
+  }
+} catch (error) {
+  // Keep analytics denied if browser storage is unavailable.
+}
+</script>
+<!-- End Default Consent Mode -->
+ <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W7QFLXDS');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Influencer Marketing Analytics | AdeCole Digital</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="canonical" href="https://adecol-sol.github.io/AdeCole/influencer-campaign-measurement.html">
+    <meta
+    name="description"
+    content="Explore an influencer marketing analytics case study combining engagement correlation analysis, BigQuery SQL, campaign measurement, and interactive Looker Studio dashboards."
+>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                AdeCole Digital
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#assessment">Assessment</a>
+                <a href="index.html#projects">Case Studies</a>
+                <a href="index.html#insights">Insights</a>
+                <a href="index.html#about">About</a>
+            </div>
+
+            <a href="index.html#assessment-lead" class="nav-cta">
+                Request a Consultation
+            </a>
+
+        </nav>
+    </header>
+<nav class="case-study-nav">
+    <div class="case-study-nav-inner">
+
+        <span class="case-study-label">
+            INFLUENCER MARKETING ANALYTICS
+        </span>
+
+        <div class="case-study-links">
+            <a href="#overview">Overview</a>
+            <a href="#engagement-analysis">Engagement Analysis</a>
+            <a href="#campaign-measurement">Campaign Measurement</a>
+            <a href="#data-architecture">Data Architecture</a>
+            <a href="#key-findings">Key Findings</a>
+            <a href="#limitations">Limitations</a>
+        </div>
+
+    </div>
+</nav>
+
+    <main>
+
+        <!-- Case Study Hero -->
+        <section class="case-study-hero" id="overview">
+    <div class="container">
+        <p class="section-eyebrow">INFLUENCER MARKETING ANALYTICS</p>
+
+        <h1>
+            From Engagement Patterns to
+            Measurable Business Outcomes
+        </h1>
+
+        <p class="case-study-intro">
+            An analytical study exploring influencer engagement patterns
+            and a separate campaign measurement framework designed to
+            connect creator activity with measurable business outcomes.
+        </p>
+
+        <div class="case-study-meta">
+            <span>BigQuery</span>
+            <span>SQL</span>
+            <span>Looker Studio</span>
+            <span>Data Analytics</span>
+        </div>
+    </div>
+</section>
+<section class="case-study-section" id="project-overview">
+    <div class="container">
+        <p class="section-eyebrow">PROJECT OVERVIEW</p>
+        <h2>Two Analyses. One Measurement Perspective.</h2>
+
+        <p>
+            Influencer marketing performance cannot be understood through
+            engagement metrics alone. Businesses also need to understand
+            how creator activity connects to website traffic, leads and
+            campaign costs.
+        </p>
+
+        <p>
+            This case study approaches that challenge through two
+            complementary analyses, each with a distinct dataset and
+            purpose.
+        </p>
+
+        <div class="case-study-grid">
+            <div class="case-study-card">
+                <h3>01. Empirical Engagement Analysis</h3>
+                <p>
+                    Examines observed influencer engagement patterns,
+                    follower-size segments, outliers and correlations
+                    using statistical analysis.
+                </p>
+                <a href="#engagement-analysis">
+                    Explore engagement analysis
+                </a>
+            </div>
+
+            <div class="case-study-card">
+                <h3>02. Synthetic Campaign Measurement</h3>
+                <p>
+                    Demonstrates how influencer, campaign, deliverable,
+                    traffic and conversion data can be connected to
+                    evaluate campaign performance.
+                </p>
+                <a href="#campaign-measurement">
+                    Explore campaign measurement
+                </a>
+            </div>
+        </div>
+
+        <p class="case-study-note">
+            Data distinction: The engagement analysis uses observed
+            dataset records. The campaign measurement exercise uses
+            simulated data created for educational and portfolio purposes.
+            Neither analysis should be interpreted as actual client results.
+        </p>
+    </div>
+</section>
+<!-- Empirical Influencer Engagement Analysis -->
+<section class="case-study-section" id="engagement-analysis">
+    <div class="container">
+        <p class="section-eyebrow">PART 01 · EMPIRICAL ANALYSIS</p>
+
+        <h2>Understanding Influencer Engagement Patterns</h2>
+
+        <p>
+            This analysis examines observed influencer engagement data
+            to explore how engagement patterns vary across follower-size
+            segments and how outliers influence the interpretation of
+            performance.
+        </p>
+
+        <h3>Research Approach</h3>
+
+        <p>
+            The analysis combines exploratory data analysis,
+            follower-segment comparisons, outlier detection and
+            correlation analysis. An interquartile range (IQR)
+            method was applied within follower-size segments to
+            identify outliers. Bootstrap resampling was also used
+            to assess the uncertainty around estimated correlations.
+        </p>
+
+        <div class="case-study-grid">
+            <div class="case-study-card">
+                <h3>2.02%</h3>
+                <p>Overall average engagement rate in the original dataset.</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>2.32%</h3>
+                <p>Average engagement rate after excluding identified outliers.</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>1,000</h3>
+                <p>Bootstrap iterations used in the correlation analysis.</p>
+            </div>
+        </div>
+
+        <h3>Interpreting the Results</h3>
+
+        <p>
+            Removing identified outliers changes the overall average
+            engagement rate, illustrating how extreme observations
+            can influence summary statistics.
+        </p>
+
+        <p>
+            The correlation analysis also requires caution. Evidence
+            across the first three follower-size segments was
+            inconclusive, while the 200M+ segment had only 17 records.
+            Its results should therefore not be treated as conclusive
+            evidence of a general relationship.
+        </p>
+
+        <div class="case-study-note">
+            <strong>Analytical distinction:</strong>
+            Engagement and correlation measures describe patterns
+            in the observed dataset. They do not establish that
+            follower size causes higher or lower engagement.
+        </div>
+
+        <a
+            href="https://datastudio.google.com/reporting/61903441-31df-4be2-b45d-02a118579d66"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Explore the Empirical Engagement Dashboard
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+<!-- Synthetic Influencer Campaign Measurement -->
+<section class="case-study-section" id="campaign-measurement">
+    <div class="container">
+        <p class="section-eyebrow">PART 02 · CAMPAIGN MEASUREMENT</p>
+
+        <h2>Connecting Influencer Activity to Business Outcomes</h2>
+
+        <p>
+            The second analysis demonstrates how campaign data can be
+            structured to connect influencer activity with website
+            traffic, leads and campaign costs.
+        </p>
+
+        <div class="case-study-note">
+            <strong>Important data disclosure:</strong>
+            All influencer, campaign, deliverable, traffic, conversion
+            and cost records in this exercise are simulated for
+            educational and portfolio purposes. They are not actual
+            client results.
+        </div>
+
+        <h3>Campaign Performance Overview</h3>
+
+        <div class="case-study-grid">
+            <div class="case-study-card">
+                <h3>6,000</h3>
+                <p>Total tracked visits</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>230</h3>
+                <p>Total leads</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>3.83%</h3>
+                <p>Overall visit-to-lead conversion rate</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>$4,500</h3>
+                <p>Total campaign cost</p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>$19.57</h3>
+                <p>Full campaign cost per lead</p>
+            </div>
+        </div>
+
+        <h3>Creator-Level Performance</h3>
+
+        <p>
+            The simulated campaign dataset allows performance to be
+            examined at creator level, comparing visits, leads,
+            conversion rates and creator fees per lead.
+        </p>
+
+        <div class="table-responsive">
+            <table class="creator-performance-table">
+                <thead>
+                    <tr>
+                        <th>Creator</th>
+                        <th>Visits</th>
+                        <th>Leads</th>
+                        <th>Conversion Rate</th>
+                        <th>Creator Fee per Lead</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Creator A</td>
+                        <td>2,000</td>
+                        <td>80</td>
+                        <td>4.0%</td>
+                        <td>$12.50</td>
+                    </tr>
+                    <tr>
+                        <td>Creator B</td>
+                        <td>3,000</td>
+                        <td>90</td>
+                        <td>3.0%</td>
+                        <td>$16.67</td>
+                    </tr>
+                    <tr>
+                        <td>Creator C</td>
+                        <td>1,000</td>
+                        <td>60</td>
+                        <td>6.0%</td>
+                        <td>$12.50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="case-study-note">
+            Creator fee per lead reflects creator fees only.
+            The $19.57 full campaign cost per lead uses the total
+            campaign cost of $4,500. These are different cost measures.
+        </div>
+
+        <h3>Measurement Dashboard</h3>
+
+        <p>
+            The interactive dashboard brings together the campaign's
+            influencer, campaign, deliverable, traffic and conversion
+            data to demonstrate how a connected measurement framework
+            can support performance analysis.
+        </p>
+
+        <a
+            href="https://datastudio.google.com/s/hQ-zwjbx6Ik"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Explore the Synthetic Campaign Measurement Dashboard
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+<!-- Data Architecture -->
+<section class="case-study-section" id="data-architecture">
+    <div class="container">
+        <p class="section-eyebrow">DATA ENGINEERING & STRUCTURE</p>
+
+        <h2>Building a Connected Measurement Framework</h2>
+
+        <p>
+            The synthetic campaign measurement exercise was structured
+            in BigQuery using five related tables. Together, these
+            tables provide a framework for connecting influencer
+            activity to campaign delivery, website traffic and leads.
+        </p>
+
+        <div class="case-study-grid">
+            <div class="case-study-card">
+                <h3>Influencers</h3>
+                <p>
+                    Stores creator-level information used to identify
+                    and analyse individual influencers.
+                </p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>Campaigns</h3>
+                <p>
+                    Organises campaign information and provides the
+                    campaign context for measurement.
+                </p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>Deliverables</h3>
+                <p>
+                    Records influencer campaign deliverables and
+                    connects creator activity to campaigns.
+                </p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>Traffic</h3>
+                <p>
+                    Records tracked website visits associated with
+                    influencer activity.
+                </p>
+            </div>
+
+            <div class="case-study-card">
+                <h3>Conversions</h3>
+                <p>
+                    Records leads and connects conversion activity
+                    to tracked traffic and campaigns.
+                </p>
+            </div>
+        </div>
+
+        <h3>Data Integrity Validation</h3>
+
+        <p>
+            Before analysing campaign performance, SQL validation
+            checks were used to test whether the relationships
+            between the five tables were consistent.
+        </p>
+
+        <div class="table-responsive">
+            <table class="data-validation-table">
+                <thead>
+                    <tr>
+                        <th>Validation Check</th>
+                        <th>Unmatched Records</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Traffic without a matching influencer</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Conversions without a matching traffic session</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Deliverables without a matching influencer</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Conversions without a matching campaign</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="case-study-note">
+            All four validation checks returned zero unmatched records.
+            This supports the consistency of the tested relationships
+            within the simulated dataset; it does not independently
+            establish the accuracy of the underlying simulated data.
+        </div>
+
+        <h3>Tools and Technologies</h3>
+
+        <p>
+            Google BigQuery was used for data storage and SQL-based
+            analysis, while Looker Studio was used to present the
+            results through interactive dashboards.
+        </p>
+    </div>
+</section>
+<!-- Key Findings -->
+<section class="case-study-section" id="key-findings">
+    <div class="container">
+        <p class="section-eyebrow">WHAT THE ANALYSIS REVEALS</p>
+
+        <h2>Key Findings and Practical Implications</h2>
+
+        <h3>01. Engagement Analysis</h3>
+
+        <ul>
+            <li>
+                The original dataset recorded an average engagement
+                rate of 2.02%, increasing to 2.32% after identified
+                outliers were excluded.
+            </li>
+            <li>
+                Outlier treatment changes the interpretation of
+                aggregate engagement performance, making data
+                quality and statistical context important.
+            </li>
+            <li>
+                Correlation evidence across the first three
+                follower-size segments was inconclusive.
+            </li>
+            <li>
+                The 200M+ follower segment contained only 17 records,
+                requiring particular caution when interpreting its
+                results.
+            </li>
+        </ul>
+
+        <h3>02. Campaign Measurement</h3>
+
+        <ul>
+            <li>
+                Creator C recorded the highest visit-to-lead
+                conversion rate at 6.0%, despite generating fewer
+                visits than the other creators.
+            </li>
+            <li>
+                Creator B generated the highest traffic volume
+                and lead count, but had the lowest conversion
+                rate at 3.0%.
+            </li>
+            <li>
+                Creator A and Creator C both recorded a creator
+                fee per lead of $12.50, compared with $16.67
+                for Creator B.
+            </li>
+            <li>
+                The full campaign cost per lead was $19.57,
+                demonstrating why creator-level fees and
+                total campaign costs should be evaluated separately.
+            </li>
+        </ul>
+
+        <h3>03. The Broader Measurement Lesson</h3>
+
+        <p>
+            Engagement, traffic, leads and costs provide different
+            perspectives on influencer marketing performance.
+            A useful measurement framework should connect these
+            dimensions rather than relying on a single metric.
+        </p>
+
+        <p>
+            The empirical analysis explores observed engagement
+            patterns, while the synthetic campaign exercise
+            demonstrates how downstream campaign measurement
+            can be structured. Together, they illustrate
+            complementary analytical capabilities.
+        </p>
+    </div>
+</section>
+<!-- Limitations and Future Development -->
+<section class="case-study-section" id="limitations">
+    <div class="container">
+        <p class="section-eyebrow">CRITICAL EVALUATION</p>
+
+        <h2>Limitations and Opportunities for Further Development</h2>
+
+        <h3>Empirical Engagement Analysis</h3>
+
+        <ul>
+            <li>
+                The analysis is based on the available dataset and
+                should not automatically be generalised to all
+                influencers or platforms.
+            </li>
+            <li>
+                Correlation does not establish causation.
+            </li>
+            <li>
+                The limited number of observations in the 200M+
+                follower segment restricts the certainty of
+                conclusions for that group.
+            </li>
+        </ul>
+
+        <h3>Synthetic Campaign Measurement</h3>
+
+        <ul>
+            <li>
+                The campaign dataset is simulated and does not
+                represent actual advertising or client performance.
+            </li>
+            <li>
+                Revenue, return on ad spend (ROAS), lead quality
+                and incremental impact were not measured.
+            </li>
+            <li>
+                The framework demonstrates data relationships
+                and reporting methods, rather than proving
+                real-world campaign effectiveness.
+            </li>
+        </ul>
+
+        <h3>Potential Next Steps</h3>
+
+        <p>
+            Further development could introduce real campaign
+            data, revenue attribution, lead-quality assessments,
+            and incrementality testing. Integration with
+            advertising and analytics platforms could also
+            provide a more complete view of campaign performance.
+        </p>
+
+        <p>
+            These additions would help move the framework
+            beyond descriptive reporting towards more
+            comprehensive marketing effectiveness measurement.
+        </p>
+    </div>
+</section>
+
+    
+
+ <!-- Related Case Studies -->
+        <section class="related-case-studies">
+            <h2>Explore More Case Studies</h2>
+            <p>
+                Explore other portfolio projects in data analytics
+                and digital marketing performance.
+            </p>
+
+            <div class="related-case-study-links">
+                <a href="cyclistic-case-study.html">
+                    Cyclistic Bike-Share Analysis →
+                </a>
+
+                <a href="bellabeat-case-study.html">
+                    Bellabeat Smart Device Analysis →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <p>
+            © 2026 AdeCole. All rights reserved.
+        </p>
+
+        <a href="privacy-policy.html" class="privacy-policy-link">
+    Privacy Policy
+</a>
+      <button
+  type="button"
+  id="open-privacy-settings"
+  class="privacy-settings-btn"
+>
+  Privacy Settings
+</button>  
+    </footer>
+    <!-- Analytics Consent Banner -->
+<div id="consent-banner" class="consent-banner" hidden>
+  <div class="consent-content">
+    <h2>Your Privacy Matters</h2>
+
+    <p>
+      We use optional analytics cookies to understand how visitors
+      interact with AdeCole Digital and improve our website.
+      You can accept or reject analytics without affecting
+      access to our services.
+    </p>
+
+    <div class="consent-actions">
+      <button type="button" id="accept-analytics">
+        Accept Analytics
+      </button>
+
+      <button type="button" id="reject-analytics">
+        Reject Analytics
+      </button>
+    </div>
+  </div>
+</div>
+<!-- End Analytics Consent Banner -->
+<script src="script.js"></script>
+</body>
+
+</html>

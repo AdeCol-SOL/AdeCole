@@ -3050,14 +3050,14 @@ p {
    ========================================= */
 
 .bellabeat-sedentary-card {
-    display: grid;
-    grid-template-columns: 0.95fr 1.35fr;
-    gap: 32px;
-    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 
     width: 100%;
-    margin-top: 2rem;
-    padding: 28px 30px;
+    min-width: 0;
+    margin-top: 0;
+    padding: 30px;
 
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -3609,4 +3609,317 @@ p {
 .related-case-study-links a:hover {
     background: #173b67;
     color: #ffffff;
+}
+/* =========================================
+   INFLUENCER MARKETING CASE STUDY
+========================================= */
+
+/* Hero spacing and content width */
+
+.case-study-hero {
+    padding: 5rem 0 4rem;
+}
+
+.case-study-hero .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Case study navigation */
+
+.case-study-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #111827;
+    white-space: nowrap;
+}
+
+.case-study-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.case-study-links a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.case-study-links a:hover {
+    color: #2563eb;
+}
+
+/* Section layout */
+
+.case-study-section {
+    padding: 5rem 0;
+}
+
+.case-study-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.case-study-section h2 {
+    max-width: 850px;
+    margin-bottom: 1.5rem;
+}
+
+.case-study-section h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.case-study-section p {
+    max-width: 850px;
+    line-height: 1.8;
+}
+
+/* Content cards and KPI grids */
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 2.5rem 0;
+}
+
+.case-study-card {
+    padding: 1.75rem;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.case-study-card h3 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+.case-study-card p {
+    margin-bottom: 0;
+    color: #64748b;
+}
+
+/* Data disclosure and explanatory notes */
+
+.case-study-note {
+    margin: 2rem 0;
+    padding: 1.5rem 1.75rem;
+    background: #ffffff;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+    line-height: 1.8;
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+
+    .case-study-hero .container,
+    .case-study-section .container {
+        padding: 0 20px;
+    }
+
+    .case-study-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .case-study-nav-inner {
+        display: block;
+        padding: 14px 20px;
+    }
+
+    .case-study-label {
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .case-study-links {
+        gap: 18px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 5px 0 10px;
+        scrollbar-width: none;
+    }
+
+    .case-study-links::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .case-study-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .case-study-section {
+        padding: 3.5rem 0;
+    }
+}
+/* Data integrity validation table */
+
+.data-validation-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.data-validation-table th:first-child,
+.data-validation-table td:first-child {
+    width: 80%;
+    text-align: left;
+}
+
+.data-validation-table th:last-child,
+.data-validation-table td:last-child {
+    width: 20%;
+    text-align: center;
+}
+
+.data-validation-table th,
+.data-validation-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.data-validation-table th {
+    background: #f8fafc;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.data-validation-table td:last-child {
+    font-weight: 700;
+    color: #15803d;
+}
+/* Creator-Level Performance Table */
+
+.creator-performance-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    min-width: 700px;
+}
+
+.creator-performance-table th,
+.creator-performance-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.creator-performance-table th {
+    background: #f8fafc;
+    color: #1f2937;
+    font-weight: 600;
+    text-align: left;
+}
+
+.creator-performance-table th:first-child,
+.creator-performance-table td:first-child {
+    width: 25%;
+    text-align: left;
+}
+
+.creator-performance-table th:nth-child(2),
+.creator-performance-table td:nth-child(2),
+.creator-performance-table th:nth-child(3),
+.creator-performance-table td:nth-child(3),
+.creator-performance-table th:nth-child(4),
+.creator-performance-table td:nth-child(4),
+.creator-performance-table th:nth-child(5),
+.creator-performance-table td:nth-child(5) {
+    text-align: right;
+}
+/* =========================================
+   INFLUENCER CASE STUDY — MOBILE REFINEMENTS
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* Hero section */
+    .case-study-hero {
+        padding: 3.5rem 0 2.75rem;
+    }
+
+    .case-study-hero h1 {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+        line-height: 1.15;
+        max-width: 13ch;
+    }
+
+    .case-study-hero p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* Main content sections */
+    .case-study-section {
+        padding: 3.5rem 0;
+    }
+
+    .case-study-section h2 {
+        font-size: clamp(1.55rem, 6vw, 2rem);
+        line-height: 1.25;
+    }
+
+    .case-study-section h3 {
+        font-size: 1.15rem;
+        line-height: 1.4;
+    }
+
+    .case-study-section p {
+        font-size: 0.96rem;
+        line-height: 1.75;
+    }
+
+    /* Content cards */
+    .case-study-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .case-study-card {
+        padding: 1.35rem;
+    }
+
+    /* Highlighted notes */
+    .case-study-note {
+        padding: 1.1rem 1.2rem;
+        font-size: 0.93rem;
+    }
+
+    /* Tables */
+    .table-responsive {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .creator-performance-table {
+        min-width: 700px;
+    }
+
+    .data-validation-table {
+        min-width: 0;
+    }
+
+    /* Dashboard links */
+    .case-study-section a {
+        overflow-wrap: anywhere;
+    }
 }
