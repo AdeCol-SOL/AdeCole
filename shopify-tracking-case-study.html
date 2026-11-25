@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Ecommerce Tracking & QA | AdeCole Digital</title>
+  <meta name="description" content="An independent public-facing review of Shopify ecommerce tracking, GA4, Meta Pixel events and consent behaviour.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+<header class="site-header">
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            AdeCole Digital
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#assessment">Assessment</a>
+            <a href="index.html#projects">Case Studies</a>
+            <a href="index.html#insights">Insights</a>
+            <a href="index.html#about">About</a>
+        </div>
+
+        <a href="index.html#assessment-lead" class="nav-cta">
+            Request a Consultation
+        </a>
+
+    </nav>
+</header>
+
+  <main>
+     <!-- Case Study Hero -->
+    <section class="case-study-hero" id="overview">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          ECOMMERCE MEASUREMENT & ANALYTICS
+        </p>
+
+        <h1>
+          Shopify Ecommerce Tracking & Consent QA
+        </h1>
+
+        <p class="hero-text">
+          An independent public-facing audit of YangaBeauty's
+          Shopify storefront, examining observable GA4 and Meta
+          Pixel ecommerce events, checkout measurement, and
+          cookie consent behaviour.
+        </p>
+
+        <p>
+          <strong>
+            Shopify · GA4 · Meta Pixel · Browser Network Inspection ·
+            Ecommerce Tracking · Consent QA
+          </strong>
+        </p>
+
+      </div>
+
+    </section>
+     <!-- Project Objective -->
+    <section class="problem" id="project-objective">
+
+      <div class="section-container">
+
+        <p class="eyebrow">AUDIT OBJECTIVE</p>
+
+        <h2>
+          Is the ecommerce customer journey being measured consistently?
+        </h2>
+
+        <p>
+          The objective was to examine whether key ecommerce events
+          could be observed across YangaBeauty's public Shopify
+          shopping journey, from product discovery through checkout.
+        </p>
+
+        <p>
+          The review focused on GA4 and Meta Pixel event behaviour,
+          ecommerce data parameters, and the browser's response
+          to different cookie consent choices.
+        </p>
+
+        <p>
+          This was an independent public-facing observational audit.
+          No store administrator, private analytics account, or
+          backend configuration access was available.
+        </p>
+
+      </div>
+
+    </section>
+    <!-- Audit Methodology -->
+    <section class="methodology" id="audit-approach">
+
+      <div class="section-container">
+
+        <p class="eyebrow">AUDIT METHODOLOGY</p>
+
+        <h2>
+          From browser observations to actionable measurement insights.
+        </h2>
+
+        <div class="method-grid">
+
+          <div class="method-card">
+            <span>01</span>
+            <h3>Inspect</h3>
+            <p>
+              Examined the public Shopify storefront using browser
+              Developer Tools and Network requests to identify
+              observable GA4 and Meta Pixel activity.
+            </p>
+          </div>
+
+          <div class="method-card">
+            <span>02</span>
+            <h3>Validate</h3>
+            <p>
+              Observed product views, add-to-cart interactions and
+              checkout events, including product identifiers,
+              values and currency parameters.
+            </p>
+          </div>
+
+          <div class="method-card">
+            <span>03</span>
+            <h3>Compare</h3>
+            <p>
+              Compared GA4 and Meta checkout values and examined
+              browser tracking behaviour under different cookie
+              consent choices.
+            </p>
+          </div>
+
+          <div class="method-card">
+            <span>04</span>
+            <h3>Recommend</h3>
+            <p>
+              Documented measurement observations, investigation
+              priorities and recommendations for further
+              authorised validation.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+     <!-- Key Findings -->
+    <section class="services" id="findings">
+
+      <div class="section-container">
+
+        <p class="eyebrow">KEY FINDINGS</p>
+
+        <h2>
+          What the ecommerce tracking audit revealed.
+        </h2>
+
+        <div class="services-grid marketing-findings-grid">
+
+          <article class="bellabeat-finding-card">
+            <div class="bellabeat-finding-header">
+              <h3>GA4 ecommerce events observed</h3>
+            </div>
+
+            <p class="bellabeat-finding-evidence">
+              The browser dispatched view_item, add_to_cart
+              and begin_checkout events.
+
+              Product information, value and currency parameters
+              were observed. The product value was ₦10,000 NGN.
+            </p>
+
+            <div class="bellabeat-finding-business">
+              <h4>MEASUREMENT IMPLICATION</h4>
+              <p>
+                The core product-to-checkout events were observable
+                in browser requests. Account-side processing and
+                reporting remain unverified.
+              </p>
+            </div>
+          </article>
+
+          <article class="bellabeat-finding-card">
+            <div class="bellabeat-finding-header">
+              <h3>Meta Pixel ecommerce events observed</h3>
+            </div>
+
+            <p class="bellabeat-finding-evidence">
+              PageView, ViewContent, AddToCart and InitiateCheckout
+              requests were observed.
+
+              Product details, currency and value parameters were
+              present in the observed requests.
+            </p>
+
+            <div class="bellabeat-finding-business">
+              <h4>MEASUREMENT IMPLICATION</h4>
+              <p>
+                Meta ecommerce events were observable across the
+                shopping journey, but account-side processing
+                and attribution were not verified.
+              </p>
+            </div>
+          </article>
+
+          <article class="bellabeat-finding-card">
+            <div class="bellabeat-finding-header">
+              <h3>Checkout values differ across platforms</h3>
+            </div>
+
+            <p class="bellabeat-finding-evidence">
+              GA4 begin_checkout reported ₦10,000, while Meta
+              InitiateCheckout reported ₦12,000.
+
+              The observed cart subtotal was ₦10,000, with
+              ₦2,000 shipping.
+            </p>
+
+            <div class="bellabeat-finding-business">
+              <h4>MEASUREMENT IMPLICATION</h4>
+              <p>
+                The difference is consistent with different
+                checkout value definitions. Both platforms'
+                treatment of shipping should be reviewed.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+     
+     <section class="case-study-section">
+      <div class="section-container">
+
+  <p class="eyebrow">CHECKOUT MEASUREMENT</p>
+
+  <h2>Understanding the ₦2,000 checkout value difference.</h2>
+
+  <p>
+    During the same checkout journey, GA4 and Meta reported
+    different values for the checkout event.
+  </p>
+
+  <div class="checkout-comparison-grid">
+
+    <div class="method-card">
+      <span>GA4</span>
+      <h3>₦10,000 NGN</h3>
+      <p>
+        The begin_checkout event reported the product subtotal
+        without the observed shipping charge.
+      </p>
+    </div>
+
+    <div class="method-card">
+      <span>META PIXEL</span>
+      <h3>₦12,000 NGN</h3>
+      <p>
+        The InitiateCheckout event reported a value matching
+        the product subtotal plus ₦2,000 shipping.
+      </p>
+    </div>
+
+  </div>
+
+  <p>
+    <strong>Interpretation:</strong> The difference is consistent
+    with different value definitions. Further authorised testing
+    is needed to confirm how each platform is configured to
+    represent checkout value.
+  </p>
+
+</div>
+    </section>
+    <section class="case-study-section">
+      <div class="section-container">
+
+  <p class="eyebrow">CONSENT & TRACKING QA</p>
+
+  <h2>Did tracking behaviour change after consent choices?</h2>
+
+  <div class="consent-findings-grid">
+
+    <div class="method-card">
+      <span>01</span>
+      <h3>Before a choice</h3>
+      <p>
+        GA4 page_view and Meta PageView requests were observed
+        before a consent choice was made.
+      </p>
+    </div>
+
+    <div class="method-card">
+      <span>02</span>
+      <h3>Reject All</h3>
+      <p>
+        After selecting Reject All and refreshing, no requests
+        to analytics.google.com or facebook.com/tr were observed.
+      </p>
+    </div>
+
+    <div class="method-card">
+      <span>03</span>
+      <h3>Accept All</h3>
+      <p>
+        GA4 and Meta PageView requests were observed after
+        selecting Accept All. However, the observed GA4
+        consent parameter remained gcs=G111.
+      </p>
+    </div>
+
+    <div class="method-card">
+      <span>04</span>
+      <h3>New tab behaviour</h3>
+      <p>
+        The Accept All choice did not persist in a new tab
+        opened through the Tag Assistant debugging session.
+        The consent banner appeared again.
+      </p>
+    </div>
+
+  </div>
+
+  <p>
+    <strong>Investigation priority:</strong> Review consent
+    defaults, consent updates and preference persistence.
+    These observations warrant further investigation but
+    do not independently establish a legal compliance breach.
+  </p>
+
+</div>
+    </section>
+     <section class="case-study-section">
+     <div class="section-container">
+
+  <p class="eyebrow">RECOMMENDED ACTIONS</p>
+
+  <h2>Priorities for improving ecommerce measurement reliability.</h2>
+
+  <div class="recommendation-grid">
+
+    <div class="recommendation-card">
+      <h3>01. Review consent configuration</h3>
+      <p>
+        Validate consent defaults and updates for analytics
+        and advertising storage. Confirm that the selected
+        preference persists across pages and new sessions.
+      </p>
+    </div>
+
+    <div class="recommendation-card">
+      <h3>02. Align checkout value definitions</h3>
+      <p>
+        Document whether shipping and other charges are
+        included in checkout values. Establish consistent
+        measurement definitions across GA4 and Meta.
+      </p>
+    </div>
+
+    <div class="recommendation-card">
+      <h3>03. Validate purchase measurement</h3>
+      <p>
+        With authorised access, conduct a controlled test
+        purchase to validate purchase events, transaction
+        IDs, item details, currency and revenue values.
+      </p>
+    </div>
+
+    <div class="recommendation-card">
+      <h3>04. Review tag architecture</h3>
+      <p>
+        Confirm tag ownership, destinations and deployment
+        methods. Document the relationship between Shopify,
+        Google tags, GA4 and Meta Pixel.
+      </p>
+    </div>
+
+  </div>
+
+</div> 
+    </section>
+     <section class="case-study-section">
+      <div class="section-container">
+
+  <p class="eyebrow">AUDIT SCOPE & LIMITATIONS</p>
+
+  <h2>What this assessment can—and cannot—confirm.</h2>
+
+  <p>
+    This assessment was based on publicly observable storefront
+    behaviour and browser network requests. It was not a
+    technical implementation project or an account-level audit.
+  </p>
+
+  <div class="scope-grid">
+
+    <div class="method-card">
+      <h3>What was examined</h3>
+      <ul>
+        <li>Public Shopify storefront interactions</li>
+        <li>Observable GA4 and Meta Pixel requests</li>
+        <li>Product and checkout event parameters</li>
+        <li>Browser tracking behaviour under consent choices</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>What was not accessible or tested</h3>
+      <ul>
+        <li>Shopify administrator and backend settings</li>
+        <li>Private GA4, Google Ads and Meta accounts</li>
+        <li>Server-side tracking configuration</li>
+        <li>Completed purchase and transaction reporting</li>
+        <li>Platform attribution and reporting accuracy</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p>
+    Browser requests confirm that events were dispatched,
+    not that they were successfully processed, attributed
+    or reported by the destination platforms. No legal
+    compliance assessment was performed.
+  </p>
+
+</div>
+    </section>
+    <!-- Key Takeaways -->
+<section class="shopify-key-takeaways" id="key-takeaways">
+
+  <div class="section-container">
+
+    <div class="takeaways-content">
+
+      <p class="eyebrow">KEY TAKEAWAYS</p>
+
+      <h2>What this audit demonstrates.</h2>
+
+      <p>
+        This project demonstrates how browser-level inspection
+        can uncover meaningful ecommerce measurement questions
+        without access to a store's private analytics accounts.
+      </p>
+
+      <ul>
+        <li>Identified observable GA4 and Meta Pixel ecommerce events across the shopping journey.</li>
+        <li>Detected a ₦2,000 difference between the two platforms' reported checkout values.</li>
+        <li>Compared tracking behaviour before and after cookie consent choices.</li>
+        <li>Converted technical observations into prioritised recommendations for further validation.</li>
+      </ul>
+
+      <p>
+        <strong>Skills demonstrated:</strong>
+        Ecommerce measurement QA, GA4 event inspection,
+        Meta Pixel validation, browser Network analysis,
+        consent behaviour testing and measurement documentation.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </main>
+  <!-- Footer -->
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <a href="index.html" class="logo">AdeCole Digital</a>
+            <p>
+                Digital Marketing | Google Ads | Marketing Analytics
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#projects">Case Studies</a>
+            <a href="index.html#about">About</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 AdeCole Digital. All rights reserved.</p>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
